@@ -1,6 +1,6 @@
 // export const LIGHT_COLORS = {
-//   '--color-text': 'hsl(0deg 0% 5%)',
-//   '--color-primary-100': 'hsl(240deg 100% 90%)',
+// '--color-text': 'hsl(0deg 0% 5%)',
+// '--color-primary-100': 'hsl(240deg 100% 90%)',
 //   '--color-primary-300': 'hsl(242deg 100% 70%)',
 //   '--color-primary-500': 'hsl(245deg 100% 60%)',
 //   '--color-primary-700': 'hsl(250deg 100% 33%)',
@@ -120,15 +120,31 @@
 //   '--shadow-card': 'none',
 // };
 
+// Define a type for the color objects that allows any property as long as it's a string.
+type ColorObject = {
+  [key: `--color-${string}`]: string;
+};
+
 export const BLOG_TITLE = 'Biblical Notes';
 
-const LIGHT_COLORS = {};
+// base colours
+const LIGHT_COLORS: ColorObject = {
+  '--color-base-400': '#38bdf8',
+  '--color-accent-400': '#fb7185',
+  '--color-white': '#ffffff',
+  '--color-darkGrey': '#082f49',
+  '--color-lightGrey': '#f0f9ff',
+};
 
-const LIGHT_SHADOWS = {};
+const DARK_COLORS: ColorObject = {};
 
-const DARK_COLORS = {};
+// named colours
+LIGHT_COLORS['--color-skyBlue'] = LIGHT_COLORS['--color-base-400'];
+LIGHT_COLORS['--color-rose'] = LIGHT_COLORS['--color-accent-400'];
 
-const DARK_SHADOWS = {};
+// shadows
+const LIGHT_SHADOWS: { [key: string]: string } = {};
+const DARK_SHADOWS: { [key: string]: string } = {};
 
 export const LIGHT_TOKENS = {
   ...LIGHT_COLORS,

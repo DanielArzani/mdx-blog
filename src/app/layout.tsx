@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import clsx from 'clsx';
 
 import { BLOG_TITLE, LIGHT_TOKENS, DARK_TOKENS } from '@/lib/constants';
+import { mainFont } from '../../public/fonts/fonts';
 
 import './globals.css';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: BLOG_TITLE,
   description: "A blog about what I've learned through my Biblical studies",
 };
@@ -24,7 +24,12 @@ export default function RootLayout({
       data-color-theme={theme}
       style={theme === 'light' ? LIGHT_TOKENS : DARK_TOKENS}
     >
-      <body>
+      <body
+        style={{
+          background: 'var(--color-lightGrey)',
+          fontFamily: mainFont.className,
+        }}
+      >
         <main>{children}</main>
       </body>
     </html>
