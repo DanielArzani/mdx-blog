@@ -5,7 +5,7 @@ export const mainFont = Work_Sans({
   subsets: ['latin'],
   display: 'fallback',
   weight: 'variable',
-  variable: '--font-family',
+  variable: '--font-family-base',
 });
 
 // for code blocks
